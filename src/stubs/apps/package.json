@@ -1,0 +1,31 @@
+{
+  "name": "{{ appName }}",
+  "version": "1.0.0",
+  "description": "{{ appName }} grpc application",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "prod": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.4",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    {{#if (isPg db)}}
+    "pg": "^8.0.2",
+    {{/if}}
+    {{#if (isMysql db)}}
+    "mysql2": "^2.1.0",
+    {{/if}}
+    "grpc": "^1.24.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "repository": {
+    "private": true
+  }
+}
