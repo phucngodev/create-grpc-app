@@ -1,5 +1,5 @@
 const grpc = require("grpc");
-const { loadEnv } = require('./utils');
+const { env, loadEnv } = require('./utils');
 loadEnv();
 
 const services = require("./grpc");
