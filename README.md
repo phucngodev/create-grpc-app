@@ -14,7 +14,7 @@ $ npm install -g create-grpc-app
 $ create-grpc-app COMMAND
 running command...
 $ create-grpc-app (-v|--version|version)
-create-grpc-app/1.0.0 darwin-x64 node-v13.12.0
+create-grpc-app/1.0.1 darwin-x64 node-v13.12.0
 $ create-grpc-app --help [COMMAND]
 USAGE
   $ create-grpc-app COMMAND
@@ -42,6 +42,19 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+
+## `create-grpc-app module [MODULENAME]`
+
+make new module
+
+```
+USAGE
+  $ create-grpc-app module [MODULENAME]
+```
+
+_See code: [src/commands/module.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.1/src/commands/module.js)_
+
 ## `create-grpc-app new [APPNAME]`
 
 create new node gRPC apps
@@ -61,38 +74,7 @@ DESCRIPTION
      $ create-grpc-app new [APPNAME] --db=mysql | postgresql
 ```
 
-_See code: [src/commands/new.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.0/src/commands/new.js)_
-
-## Generated project structure
-```
-.
-├── Dockerfile
-├── README.md
-├── docker-compose.yml
-├── ecosystem.config.js
-├── grpc
-│   └── index.js
-├── modules
-│   ├── post
-│   │   ├── post.grpc.js
-│   │   ├── post.handlers.js
-│   │   ├── post.proto
-│   │   ├── post.repository.js
-│   │   └── post.service.js
-│   └── todo
-│       ├── todo.grpc.js
-│       ├── todo.handlers.js
-│       ├── todo.proto
-│       ├── todo.repository.js
-│       └── todo.service.js
-├── package-lock.json
-├── package.json
-├── server.js
-└── utils
-    └── index.js
-```
-
-
+_See code: [src/commands/new.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.1/src/commands/new.js)_
 <!-- commandsstop -->
 
 ## `create-grpc-app module [MODULENAME]`
@@ -105,4 +87,3 @@ USAGE
 ```
 
 _See code: [src/commands/module.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.0/src/commands/module.js)_
-
