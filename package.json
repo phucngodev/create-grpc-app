@@ -1,7 +1,7 @@
 {
   "name": "create-grpc-app",
   "description": "generate node grpc application",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Phu <ngovanphuc@hotmail.com>",
   "bin": {
     "create-grpc-app": "./bin/run"
@@ -21,15 +21,26 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "files": ["/bin", "/npm-shrinkwrap.json", "/oclif.manifest.json", "/src"],
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
   "homepage": "https://github.com/phucngome/create-grpc-app",
-  "keywords": ["create-grpc-app", "gRPC", "nodejs gRPC app"],
+  "keywords": [
+    "create-grpc-app",
+    "gRPC",
+    "nodejs gRPC app"
+  ],
   "license": "MIT",
   "main": "src/index.js",
   "oclif": {
     "commands": "./src/commands",
     "bin": "create-grpc-app",
-    "plugins": ["@oclif/plugin-help"]
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
   },
   "repository": "phucngome/create-grpc-app",
   "scripts": {
