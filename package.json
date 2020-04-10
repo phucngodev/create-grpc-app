@@ -21,25 +21,15 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "files": [
-    "/bin",
-    "/npm-shrinkwrap.json",
-    "/oclif.manifest.json",
-    "/src"
-  ],
+  "files": ["/bin", "/npm-shrinkwrap.json", "/oclif.manifest.json", "/src"],
   "homepage": "https://github.com/phucngome/create-grpc-app",
-  "keywords": [
-    "gRPC",
-    "nodejs gRPC app"
-  ],
+  "keywords": ["create-grpc-app", "gRPC", "nodejs gRPC app"],
   "license": "MIT",
   "main": "src/index.js",
   "oclif": {
     "commands": "./src/commands",
     "bin": "create-grpc-app",
-    "plugins": [
-      "@oclif/plugin-help"
-    ]
+    "plugins": ["@oclif/plugin-help"]
   },
   "repository": "phucngome/create-grpc-app",
   "scripts": {
