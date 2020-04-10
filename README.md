@@ -14,7 +14,7 @@ $ npm install -g create-grpc-app
 $ create-grpc-app COMMAND
 running command...
 $ create-grpc-app (-v|--version|version)
-create-grpc-app/1.0.1 darwin-x64 node-v13.12.0
+create-grpc-app/1.0.2 darwin-x64 node-v13.12.0
 $ create-grpc-app --help [COMMAND]
 USAGE
   $ create-grpc-app COMMAND
@@ -53,7 +53,7 @@ USAGE
   $ create-grpc-app module [MODULENAME]
 ```
 
-_See code: [src/commands/module.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.1/src/commands/module.js)_
+_See code: [src/commands/module.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.2/src/commands/module.js)_
 
 ## `create-grpc-app new [APPNAME]`
 
@@ -74,7 +74,7 @@ DESCRIPTION
      $ create-grpc-app new [APPNAME] --db=mysql | postgresql
 ```
 
-_See code: [src/commands/new.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.1/src/commands/new.js)_
+_See code: [src/commands/new.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.2/src/commands/new.js)_
 <!-- commandsstop -->
 
 ## `create-grpc-app module [MODULENAME]`
