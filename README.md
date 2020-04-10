@@ -9,9 +9,10 @@ generate node grpc application
 <!-- tocstop -->
 # Usage
 <!-- usage -->
-```sh-session
+```bash
 $ npm install -g create-grpc-app
 $ create-grpc-app COMMAND
+
 running command...
 $ create-grpc-app (-v|--version|version)
 create-grpc-app/1.0.2 darwin-x64 node-v13.12.0
@@ -42,7 +43,6 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
 
 ## `create-grpc-app new [APPNAME]`
 
