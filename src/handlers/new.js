@@ -1,15 +1,16 @@
 const path = require("path");
 const fs = require("fs-extra");
+const chalk = require("chalk");
 const { execSync } = require("child_process");
 const { hbs } = require("../utils");
+const glob = require("glob");
 
 function createNewApp(appName, db) {
   const destDir = path.resolve(process.cwd(), appName);
   if (fs.existsSync(destDir)) {
-    console.error(`${destDir} has already existed`);
+    console.error(chalk.red(`${destDir} has already existed`));
     process.exit(1);
   }
-  // if (fs.existS)
 
   const srcAppDir = path.resolve(__dirname, "../stubs/apps");
   fs.ensureDirSync(destDir);
@@ -29,15 +30,28 @@ function createNewApp(appName, db) {
   }
 
   handleWithDB(db, appName);
+  printCreatedFiles(destDir);
 
   const currentDir = process.cwd();
   process.chdir(destDir);
-  execSync("npm i");
-  execSync("git init");
 
+  console.log("Installing dependencies...");
+  execSync("npm i");
+  console.log("Initialize git repository");
+  execSync("git init");
   process.chdir(currentDir);
 
   printFinalGuide(appName);
+}
+
+function printCreatedFiles(destDir) {
+  const createdFiles = glob.sync(`${path.join(destDir, "**")}`);
+  createdFiles.push(`${path.resolve(destDir, ".env")}`);
+  createdFiles.push(`${path.resolve(destDir, ".env.example")}`);
+  createdFiles.push(`${path.resolve(destDir, ".gitignore")}`);
+  createdFiles.push(`${path.resolve(destDir, ".dockerignore")}`);
+
+  createdFiles.forEach(file => console.log(chalk.green(`   Created ${file}`)));
 }
 
 function handleWithDB(db, appName) {
@@ -66,13 +80,15 @@ function printFinalGuide(appName) {
   const name = parts[parts.length - 1];
 
   const guide = `
-  Created ${name} application ${path.resolve(process.cwd(), appName)}
+  Created ${name} application ${chalk.green(
+    `${path.resolve(process.cwd(), appName)}`,
+  )}
 
   change to ${name} directory
-  cd ${appName}
+  ${chalk.green(`cd ${appName}`)}
 
   Start the ${name}
-  npm start
+  ${chalk.green(`npm start`)}
   `;
 
   console.log(guide);

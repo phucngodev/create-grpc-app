@@ -1,3 +1,4 @@
+const chalk = require("chalk");
 const { Command, flags } = require("@oclif/command");
 const { createNewModule } = require("../handlers/module.js");
 
@@ -10,11 +11,17 @@ class ModuleCommand extends Command {
 
     const { moduleName } = args;
     if (!moduleName) {
-      this.log(`module name is required!`);
+      this.log(chalk.red("module name is required!"));
       process.exit(1);
     }
 
+    this.log(`Creating ${moduleName} project`);
     createNewModule(moduleName);
+    this.log(
+      `\n\n========================${chalk.green(
+        "DONE",
+      )}==============================\n\n`,
+    );
   }
 }
 

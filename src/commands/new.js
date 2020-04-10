@@ -1,3 +1,4 @@
+const chalk = require("chalk");
 const { Command, flags } = require("@oclif/command");
 const { createNewApp } = require("../handlers/new.js");
 
@@ -21,17 +22,23 @@ class NewCommand extends Command {
     const { appName } = args;
     const { db } = flags;
     if (!appName) {
-      this.log(`module name is required!`);
+      this.log(`${chalk.red("module name is required!")}`);
       process.exit(1);
     }
 
     const allowDBs = ["mysql", "postgresql"];
     if (db && !allowDBs.includes(db)) {
-      console.error(`supported db is [mysql, postgresql]`);
+      console.error(`${chalk.red("supported db is [mysql, postgresql]")}`);
       process.exit(1);
     }
 
+    this.log(`Creating ${appName} project`);
     createNewApp(appName, db);
+    this.log(
+      `\n\n========================${chalk.green(
+        "DONE",
+      )}==============================\n\n`,
+    );
   }
 }
 

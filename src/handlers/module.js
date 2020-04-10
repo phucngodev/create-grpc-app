@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs-extra");
+const chalk = require("chalk");
 const { hbs } = require("../utils");
 
 function createNewModule(moduleName) {
@@ -14,9 +15,10 @@ function createNewModule(moduleName) {
     let template = hbs.compile(fs.readFileSync(inputFile).toString());
     let content = template(data);
     fs.outputFileSync(outputFile, content);
+    console.log(chalk.green(`Created file ${outputFile}`));
   }
 
-  console.log(`created new module ${destFolder}`);
+  console.log(chalk.green(`created new module ${destFolder}`));
 }
 
 module.exports = {
