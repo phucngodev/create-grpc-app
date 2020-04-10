@@ -44,17 +44,6 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
 
-## `create-grpc-app module [MODULENAME]`
-
-make new module
-
-```
-USAGE
-  $ create-grpc-app module [MODULENAME]
-```
-
-_See code: [src/commands/module.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.2/src/commands/module.js)_
-
 ## `create-grpc-app new [APPNAME]`
 
 create new node gRPC apps
@@ -74,8 +63,41 @@ DESCRIPTION
      $ create-grpc-app new [APPNAME] --db=mysql | postgresql
 ```
 
+### Generated project structure
+
+```bash
+.
+├── Dockerfile
+├── README.md
+├── database
+│   ├── index.js
+│   ├── migrations
+│   │   └── 20200408130559_create_user_table.js
+│   └── seeds
+│       └── create_test_users.js
+├── docker-compose.yml
+├── ecosystem.config.js
+├── grpc
+│   └── index.js
+├── knexFile.js
+├── modules
+│   └── todo
+│       ├── todo.grpc.js
+│       ├── todo.handlers.js
+│       ├── todo.proto
+│       ├── todo.repository.js
+│       └── todo.service.js
+├── package-lock.json
+├── package.json
+├── server.js
+├── tags
+└── utils
+    └── index.js
+```
+
 _See code: [src/commands/new.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.2/src/commands/new.js)_
 <!-- commandsstop -->
+
 
 ## `create-grpc-app module [MODULENAME]`
 
@@ -86,4 +108,5 @@ USAGE
   $ create-grpc-app module [MODULENAME]
 ```
 
-_See code: [src/commands/module.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.0/src/commands/module.js)_
+_See code: [src/commands/module.js](https://github.com/phucngome/create-grpc-app/blob/v1.0.2/src/commands/module.js)_
+

@@ -13,6 +13,7 @@
   "dependencies": {
     "@grpc/proto-loader": "^0.5.4",
     "axios": "^0.19.2",
+    "knex": "^0.20.13",
     "dotenv": "^8.2.0",
     {{#if (isPg db)}}
     "pg": "^8.0.2",
