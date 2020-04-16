@@ -9,14 +9,24 @@ function createNewModule(moduleName) {
   const files = fs.readdirSync(srcFolder);
 
   const data = { name: moduleName };
-  for (let file of files) {
-    let inputFile = `${path.resolve(srcFolder)}/${file}`;
-    let outputFile = path.resolve(destFolder, file.replace("name", moduleName));
-    let template = hbs.compile(fs.readFileSync(inputFile).toString());
+  const moduleFiles = files.map(file => {
+    return {
+      inputFile: `${path.resolve(srcFolder)}/${file}`,
+      outputFile: path.resolve(destFolder, file.replace("name", moduleName)),
+    };
+  });
+
+  moduleFiles.push({
+    inputFile: path.resolve(__dirname, "../stubs/proto", "name.proto"),
+    outputFile: path.resolve(process.cwd(), "protos", `${moduleName}.proto`),
+  });
+
+  moduleFiles.forEach(file => {
+    let template = hbs.compile(fs.readFileSync(file.inputFile).toString());
     let content = template(data);
-    fs.outputFileSync(outputFile, content);
-    console.log(chalk.green(`Created file ${outputFile}`));
-  }
+    fs.outputFileSync(file.outputFile, content);
+    console.log(chalk.green(`Created file ${file.outputFile}`));
+  });
 
   console.log(chalk.green(`created new module ${destFolder}`));
 }

@@ -1,0 +1,26 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": " grpc application",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "prod": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.4",
+    "axios": "^0.19.2",
+    "knex": "^0.20.13",
+    "dotenv": "^8.2.0",
+    "grpc": "^1.24.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "repository": {
+    "private": true
+  }
+}
