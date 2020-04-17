@@ -1,13 +1,19 @@
 # Node gRPC application
 
-# create new module/service
+## `create-grpc-app module [MODULENAME]`
 
-- Create Post service for current project
-```bash
-create-grpc-app module post
+make new module
+
+```
+USAGE
+  $ create-grpc-app module [MODULENAME]
 ```
 
-- Defines modules/post/post.proto protobuf
-- Implement rpc handler for proto in modules/post/post.handlers.js
+After create new module with command
+```bash
+create-grpc-app module NAME
 
-each newly generated module/service has sample sayHello RPC for reference
+```
+- Define protobuf service for the module in file PROJECT_DIR/protos/NAME.proto
+- Implement service RPC methods in file PROJECT_DIR/module/NAME/name.handler.js
+

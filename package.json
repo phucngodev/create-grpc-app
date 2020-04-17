@@ -6,7 +6,7 @@
   "bin": {
     "create-grpc-app": "./bin/run"
   },
-  "bugs": "https://github.com/phucngome/create-grpc-app/issues",
+  "bugs": "https://github.com/phucngodev/create-grpc-app/issues",
   "dependencies": {
     "@oclif/command": "^1.5.19",
     "@oclif/config": "^1.14.0",
@@ -23,28 +23,17 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "files": [
-    "/bin",
-    "/npm-shrinkwrap.json",
-    "/oclif.manifest.json",
-    "/src"
-  ],
-  "homepage": "https://github.com/phucngome/create-grpc-app",
-  "keywords": [
-    "create-grpc-app",
-    "gRPC",
-    "nodejs gRPC app"
-  ],
+  "files": ["/bin", "/npm-shrinkwrap.json", "/oclif.manifest.json", "/src"],
+  "homepage": "https://github.com/phucngodev/create-grpc-app",
+  "keywords": ["create-grpc-app", "gRPC", "nodejs gRPC app"],
   "license": "MIT",
   "main": "src/index.js",
   "oclif": {
     "commands": "./src/commands",
     "bin": "create-grpc-app",
-    "plugins": [
-      "@oclif/plugin-help"
-    ]
+    "plugins": ["@oclif/plugin-help"]
   },
-  "repository": "phucngome/create-grpc-app",
+  "repository": "phucngodev/create-grpc-app",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "prepack": "oclif-dev manifest",
